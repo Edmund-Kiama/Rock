@@ -9,9 +9,26 @@
 <body>
     <h1>Rock-Papper-Scissors</h1>
     <div class="choices">
-      <button onclick="playGame('rock')">👊</button>
-      <button onclick="playGame('papper')">✋</button>
-      <button onclick="playGame('scissors')">✋</button>
+      <button onclick="playGame('rock')">
+        <img 
+            src="./images/fist.png" 
+            alt="rock"
+            id="rock">
+    </button>
+      <button onclick="playGame('papper')">
+        <img 
+            src="./images/hand-paper.png" 
+            alt="paper"
+            id="paper"
+        >
+        </button>
+      <button onclick="playGame('scissors')">
+        <img 
+            src="./images/scissors.png" 
+            alt="scissors"
+            id="scissors"
+        >
+    </button>
     </div>
     <div id="playerDisplay">PLAYER:</div>
     <div id="computerDisplay">COMPUTER:</div>
@@ -22,6 +39,13 @@
 
      <div class="scoreDisplay">Computer Score:
         <span id="computerScoreDisplay">0</span></div>
+    
+    <button 
+        id="reset"
+        onclick="resetGame()"
+        >
+        Reset
+    </button>
 
     <script src="script.js"></script>
 </body>

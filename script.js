@@ -7,11 +7,12 @@ const computerDisplay = document.getElementById("computerDisplay"); // Displays 
 const resultDisplay = document.getElementById("resultDisplay"); // Displays the game result (win, lose, or tie)
 const playerScoreDisplay = document.getElementById("playerScoreDisplay"); // Displays the player's score
 const computerScoreDisplay = document.getElementById("computerScoreDisplay"); // Displays the computer's score
+const reset = document.getElementById("reset");
 
 // Variables to keep track of scores
 let playerScore = 0; // Player's score
 let computerScore = 0; // Computer's score
-
+let result = ""; // Initialize result to store the outcome of the game
 /**
  * Function to play the game when the player makes a choice.
  * @param {string} playerChoice - The choice made by the player ("rock", "papper", or "scissors").
@@ -20,8 +21,7 @@ function playGame(playerChoice) {
     // Computer randomly selects a choice from the 'choices' array
     const computerChoice = choices[Math.floor(Math.random() * 3)];
 
-    // Initialize result to store the outcome of the game
-    let result = "";
+    
 
     // Compare player and computer choices to determine the result
     if (playerChoice === computerChoice) {
@@ -44,6 +44,7 @@ function playGame(playerChoice) {
                 break;
         }
     }
+    
 
     // Update the display with the player's and computer's choices
     playerDisplay.textContent = `PLAYER: ${playerChoice.toUpperCase()}`; // Show player's choice
@@ -58,7 +59,7 @@ function playGame(playerChoice) {
         case "YOU WIN!":
             resultDisplay.classList.add("green"); // Add green color for a win
             playerScore++; // Increment player's score
-            playerScoreDisplay.textContent = playerScore; // Update player's score display
+            playerScoreDisplay.textContent = playerScore;
             break;
         case "YOU LOSE!":
             resultDisplay.classList.add("red"); // Add red color for a loss
@@ -68,3 +69,17 @@ function playGame(playerChoice) {
         // No changes to score for a tie
     }
 }
+function resetGame() {
+    //Resets the results display
+    resultDisplay.textContent = "";
+    resultDisplay.classList.remove("green", "red"); // Reset result color classes
+
+    // Resets the display with the player's and computer's choices
+    playerDisplay.textContent = `PLAYER:`; // Resets player's choice
+    computerDisplay.textContent = `COMPUTER:`; // Resets computer's choice
+
+    //Resets player and computer scores
+    playerScoreDisplay.textContent = computerScoreDisplay.textContent = 0;
+};
+
+

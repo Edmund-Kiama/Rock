@@ -8,22 +8,31 @@ body{
 }
 h1{
     font-size: 3.5rem;
-    color: rgb(81, 18, 55);
+    color: rgb(27, 27, 27);
 }
 .choices {
     margin-bottom: 30px;
 }
 .choices button{
-    font-size: 7.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
     margin: 0 10px;
-    min-width: 160px;
     border-radius: 50%;
-    background-color: rgb(39, 15, 19);
+    background-color: rgb(206, 206, 206);
     cursor: pointer;
+    transition: 0.3s;
 }
-
+.choices button img {
+    width: 100px;
+    transition: 0.35s;   
+}
+.choices button img:hover{
+    filter: invert(100%);
+}
 .choices button:hover {
-    background-color: rgb(78, 35, 42);
+    background-color: rgb(46, 46, 46);
 }
 #playerDisplay, #computerDisplay{
     font-size: 2.5rem;
@@ -40,4 +49,20 @@ h1{
 }
 .scoreDisplay{
     font-size: 2rem;
+}
+button#reset {
+    color: black;
+    font-size: 30px;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 200px;
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button#reset:hover {
+    background-color: black;
+    color: white;
 }
